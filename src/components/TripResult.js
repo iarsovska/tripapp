@@ -17,11 +17,11 @@ class TripResult extends Component {
             { this.props.searchResults.map( res => 
              <li>
                 <div> 
-                  <strong>{res.departure} > {res.arrival} </strong> 
-                  <span className="pull-right">{ res.cost } € </span>
+                  <strong>{res.departure} &#x21d2; {res.arrival} </strong> 
+                  <label className="badge badge-success">{ res.cost } € </label>
                 </div>
                 <small>
-                  <strong>{res.transport}:</strong> {res.reference} for { Math.floor(res.duration / 60) }h { res.duration % 60 }min 
+                  By <strong>{res.transport}: </strong> {res.reference} for <label className="text-primary" >{ Math.floor(res.duration / 60) }h { res.duration % 60 }min </label>
                 </small>
               </li>
               ) 
