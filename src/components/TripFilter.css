@@ -1,0 +1,19 @@
+.TripFilter {
+  padding: 40px 0;
+}
+
+.do-trip-filter{
+  max-width: 400px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.do-trip-filter .form-group,
+.do-trip-filter .btn-group{
+  margin-bottom: 15px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

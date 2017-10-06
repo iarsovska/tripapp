@@ -1,0 +1,18 @@
+.do-results-list{
+	max-width: 400px;
+  	width: 100%;
+  	margin: 20px auto;
+}
+
+.do-results-list ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.do-results-list li{
+	background: #f1f1f1;
+	margin: 5px 0;
+	border-radius: 3px;
+	padding: 15px 20px;
+}
