@@ -17,7 +17,8 @@ class TripFilter extends Component {
       dep_locs: [],     //all departure locations
       arr_locs: [],     //all arrival locations
       all_deals: [],    //all deals with recalculated duration times in minutes and costs with discounts
-      deals_path: []    //the search result is stored here
+      deals_path: [],    //the search result is stored here
+	  total_cost: 0     //the trip total cost
     }
   }
 
@@ -130,15 +131,20 @@ class TripFilter extends Component {
   //IR: Extract the path backwards (track the nodes)
   trackPath(sp,gtree){
     var result = [];
+	var total_cost = 0;
     if(Array.isArray(sp) && sp.length > 1) {
       for(var i = 0; i < sp.length - 1; ++i) {
         var found = gtree.find(m => m.departure === sp[i] && m.arrival === sp[i+1]);
 
         if(found) {
           result.push(found);
+	      total_cost += found.cost;
         }
       }
     }
+
+    this.setState({ total_cost });
+
     return result;
   }
 
@@ -381,7 +387,7 @@ class TripFilter extends Component {
 
           </form>
           
-          <TripResult searchResults={ this.state.deals_path } />
+          <TripResult searchResults={ this.state.deals_path } totalCost={ this.state.total_cost } />
 
           <button onClick={ this.resetResults.bind(this) } className="form-control btn btn-danger" type="button">Reset</button>
 

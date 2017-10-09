@@ -26,8 +26,9 @@ class TripResult extends Component {
               </li>
               ) 
             }
-          
+
           </ul>
+	        {  this.props.totalCost > 0 ? <div className="card" ><h5><strong>Total Cost: </strong><label className="badge badge-success float-right"> { this.props.totalCost }  €</label></h5></div> : '' }
          </div>    
       </div>
     );
