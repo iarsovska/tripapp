@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import './TripFilter.css';
 import responseData from '../lib/response.json';
 
@@ -17,7 +16,7 @@ class TripFilter extends Component {
       dep_locs: [],     //all departure locations
       arr_locs: [],     //all arrival locations
       all_deals: [],    //all deals with recalculated duration times in minutes and costs with discounts
-      deals_path: [],    //the search result is stored here
+      deals_path: [],   //the search result is stored here
 	  total_cost: 0     //the trip total cost
     }
   }
@@ -148,8 +147,8 @@ class TripFilter extends Component {
     return result;
   }
 
-  //>>>>>>>>>>>>>>> IR: Need to make a separate Component out of this
-  //SHORTEST PATH DJIKSTRA IMPLEMENTATION
+  // Shortest Path Djikstra implementation - This is implementation of the Djikstra algorithm is taken from:
+  // https://github.com/andrewhayward/dijkstra
   createGraph(g){
     var Graph = (function (undefined) {
 
